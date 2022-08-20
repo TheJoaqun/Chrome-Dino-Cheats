@@ -57,3 +57,72 @@ Runner.instance_.tRex.config.GRAVITY = newGravity; // This Function Makes Dino T
 ```js
 Runner.instance_.tRex.config.GRAVITY = 0.1;
 ```
+
+### Obstacle Remover
+
+Remove Dino Obstacle
+
+> Manual Pressing 'E'
+
+```js
+b = Runner.instance_.clearCanvas;
+window.addEventListener("keydown", checkKeyPressed, false); // Listen "E" Key
+
+async function checkKeyPressed(l) {
+  if (l.keyCode == "69") {
+    // If "e" Key Pressed Then
+    await drawline();
+  }
+}
+async function drawline() {
+  if (Runner.instance_.horizon.obstacles.length > 0) {
+    // Check If Has Obstacle
+    Runner.instance_.clearCanvas = function () {};
+    /* Visual */
+    Runner.instance_.canvasCtx.beginPath();
+    Runner.instance_.canvasCtx.moveTo(
+      Runner.instance_.tRex.xPos + 23,
+      Runner.instance_.tRex.yPos + 20
+    );
+    Runner.instance_.canvasCtx.lineTo(
+      Runner.instance_.horizon.obstacles[0].xPos + 10,
+      Runner.instance_.horizon.obstacles[0].yPos + 10
+    );
+    Runner.instance_.canvasCtx.stroke();
+    setTimeout(function () {
+      Runner.instance_.clearCanvas = b;
+    }, 50);
+    await Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
+  }
+}
+```
+
+> AutoMatic
+
+```js
+setInterval(async function () {
+  b = Runner.instance_.clearCanvas;
+  if (Runner.instance_.horizon.obstacles.length > 0) {
+    // Check If Has Obstacle
+    console.log(
+      `Removed: ` + Runner.instance_.horizon.obstacles.length + ` Obstacle`
+    ); // Debuger
+    Runner.instance_.clearCanvas = function () {};
+    /* Visual */
+    Runner.instance_.canvasCtx.beginPath();
+    Runner.instance_.canvasCtx.moveTo(
+      Runner.instance_.tRex.xPos + 23,
+      Runner.instance_.tRex.yPos + 20
+    );
+    Runner.instance_.canvasCtx.lineTo(
+      Runner.instance_.horizon.obstacles[0].xPos + 10,
+      Runner.instance_.horizon.obstacles[0].yPos + 10
+    );
+    Runner.instance_.canvasCtx.stroke();
+    setTimeout(function () {
+      Runner.instance_.clearCanvas = b;
+    }, 50);
+    await Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
+  }
+}, 1 * 1000); // Repeater Seconds * Miliseconds (Only Change Seconds Do Not Edit Miliseconds Interval & Timeout CalCultes In MiliSeconds)
+```
