@@ -4,7 +4,7 @@ Starting First Open Developers Tools By Using ShortCut `Ctrl+Shift+I (Windows)` 
 
 ## Index
 
-[Auto Bot][https://github.com/thejoaqun/chrome-dino-cheats/blob/master/dino.md#auto-dino-bot]
+![Auto Bot][https://github.com/thejoaqun/chrome-dino-cheats/blob/master/dino.md#auto-dino-bot]
 
 ### Dev Tools Console
 
