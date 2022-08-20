@@ -68,13 +68,13 @@ Remove Dino Obstacle
 b = Runner.instance_.clearCanvas;
 window.addEventListener("keydown", checkKeyPressed, false); // Listen "E" Key
 
-async function checkKeyPressed(l) {
+function checkKeyPressed(l) {
   if (l.keyCode == "69") {
     // If "e" Key Pressed Then
-    await drawline();
+    drawline();
   }
 }
-async function drawline() {
+function drawline() {
   if (Runner.instance_.horizon.obstacles.length > 0) {
     // Check If Has Obstacle
     Runner.instance_.clearCanvas = function () {};
@@ -92,15 +92,15 @@ async function drawline() {
     setTimeout(function () {
       Runner.instance_.clearCanvas = b;
     }, 50);
-    await Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
+    Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
   }
 }
 ```
 
-> AutoMatic
+> AutoMatic (Lower Interval Speed Better)
 
 ```js
-setInterval(async function () {
+setInterval(function () {
   b = Runner.instance_.clearCanvas;
   if (Runner.instance_.horizon.obstacles.length > 0) {
     // Check If Has Obstacle
@@ -122,7 +122,7 @@ setInterval(async function () {
     setTimeout(function () {
       Runner.instance_.clearCanvas = b;
     }, 50);
-    await Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
+    Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
   }
-}, 1 * 1000); // Repeater Seconds * Miliseconds (Only Change Seconds Do Not Edit Miliseconds Interval & Timeout CalCultes In MiliSeconds)
+}, 0.5 * 1000); // Repeater Seconds * Miliseconds (Only Change Seconds Do Not Edit Miliseconds Interval & Timeout CalCultes In MiliSeconds)
 ```
