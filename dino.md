@@ -2,6 +2,8 @@
 
 Starting First Open Developers Tools By Using ShortCut `Ctrl+Shift+I (Windows)` or `Opt+Shift+I(Mac)`
 
+### Index
+
 ### Dev Tools Console
 
 - Make Sure You Are In A Tab Named `Console` In There You Can Run Any Script But Be Aware Of Maldicius Scripts.
@@ -143,7 +145,7 @@ Runner.instance_.playingIntro = true;
 Runner.instance_.playingIntro = false;
 ```
 
-#### Auto Dino Bot
+### Auto Dino Bot
 
 ```js
 function keyDown(keyCode) {
