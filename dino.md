@@ -142,3 +142,103 @@ Runner.instance_.playingIntro = true;
 ```js
 Runner.instance_.playingIntro = false;
 ```
+
+#### Auto Dino Bot
+
+```js
+function keyDown(keyCode) {
+  var event = document.createEvent("KeyboardEvent");
+  Object.defineProperty(event, "keyCode", {
+    get: function parseKeyDown() {
+      return this.keyCodeVal;
+    },
+  });
+  if (event.initKeyboardEvent) {
+    event.initKeyboardEvent(
+      "keydown",
+      true,
+      true,
+      document.defaultView,
+      keyCode,
+      keyCode,
+      "",
+      "",
+      false,
+      ""
+    );
+  } else {
+    event.initKeyEvent(
+      "keydown",
+      true,
+      true,
+      document.defaultView,
+      false,
+      false,
+      false,
+      false,
+      keyCode,
+      0
+    );
+  }
+  event.keyCodeVal = keyCode;
+  document.body.dispatchEvent(event);
+}
+function keyUp(keyCode) {
+  var event = document.createEvent("KeyboardEvent");
+  Object.defineProperty(event, "keyCode", {
+    get: function get() {
+      return this.keyCodeVal;
+    },
+  });
+  if (event.initKeyboardEvent) {
+    event.initKeyboardEvent(
+      "keyup",
+      true,
+      true,
+      document.defaultView,
+      keyCode,
+      keyCode,
+      "",
+      "",
+      false,
+      ""
+    );
+  } else {
+    event.initKeyEvent(
+      "keyup",
+      true,
+      true,
+      document.defaultView,
+      false,
+      false,
+      false,
+      false,
+      keyCode,
+      0
+    );
+  }
+  event.keyCodeVal = keyCode;
+  document.body.dispatchEvent(event);
+}
+setInterval(function () {
+  if (Runner.instance_.horizon.obstacles.length > 0) {
+    if (
+      Runner.instance_.horizon.obstacles[0].xPos <
+        25 * Runner.instance_.currentSpeed -
+          Runner.instance_.horizon.obstacles[0].width / 2 &&
+      Runner.instance_.horizon.obstacles[0].yPos > 75
+    ) {
+      keyUp(40);
+      keyDown(38);
+    }
+    if (
+      Runner.instance_.horizon.obstacles[0].xPos <
+        30 * Runner.instance_.currentSpeed -
+          Runner.instance_.horizon.obstacles[0].width / 2 &&
+      Runner.instance_.horizon.obstacles[0].yPos <= 75
+    ) {
+      keyDown(40);
+    }
+  }
+}, 5);
+```
