@@ -11,14 +11,14 @@ Starting First Open Developers Tools By Using ShortCut `Ctrl+Shift+I (Windows)` 
 
 This Script Can Edit Dino Speed (Speed Limit: None)
 
-- First Example
+> First Example
 
 ```js
 const speed = 100; // This Variable Define Speed And Then We Call It In Line 2
 Runner.instance_.setSpeed(speed); // This Function Makes Dino To Change Speed, The Part Of Code ".setSpeed(speed)" speed is the number value of speed defined in the first line.
 ```
 
-- Second Example
+> Second Example
 
 ```js
 Runner.instance_.setSpeed(100);
