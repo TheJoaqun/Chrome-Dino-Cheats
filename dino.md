@@ -4,7 +4,9 @@ Starting First Open Developers Tools By Using ShortCut `Ctrl+Shift+I (Windows)` 
 
 ## Index
 
-[Auto Bot](https://github.com/thejoaqun/chrome-dino-cheats/blob/master/dino.md#auto-dino-bot)
+[[Auto Bot]](https://github.com/thejoaqun/chrome-dino-cheats/blob/master/dino.md#auto-dino-bot)
+
+### Console
 
 - Make Sure You Are In A Tab Named `Console` In There You Can Run Any Script But Be Aware Of Maldicius Scripts.
 - We Are Going To Run Scripts In Console Tab To Hack Into It (Dino Crhome Is Very Easy To Cheat In Game)
