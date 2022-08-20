@@ -9,7 +9,7 @@ Starting First Open Developers Tools By Using ShortCut `Ctrl+Shift+I (Windows)` 
 
 ### Change Speed
 
-This Script Can Edit Dino Speed (Speed Limit: None ~ Default: 10)
+This Script Can Edit Dino Speed (Speed Limit: None ~ Default: 6)
 
 > First Example
 
@@ -26,7 +26,7 @@ Runner.instance_.setSpeed(100);
 
 ### Change JumpPower
 
-This Script Can Edit Dino JumpPower (JumpPower Limit: None ~ Default: 10)
+This Script Can Edit Dino JumpPower (JumpPower Limit: None ~ Default: 0.6)
 
 > First Example
 
@@ -125,4 +125,20 @@ setInterval(function () {
     Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
   }
 }, 0.5 * 1000); // Repeater Seconds * Miliseconds (Only Change Seconds Do Not Edit Miliseconds Interval & Timeout CalCultes In MiliSeconds)
+```
+
+### No Obstacle Game (Static)
+
+Stop Character But The Games Its Works Normally
+
+> Enable
+
+```js
+Runner.instance_.playingIntro = true;
+```
+
+> Disable
+
+```js
+Runner.instance_.playingIntro = false;
 ```
