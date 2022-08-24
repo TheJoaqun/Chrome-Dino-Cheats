@@ -64,6 +64,22 @@ Runner.instance_.tRex.config.GRAVITY = newGravity; // This Function Makes Dino T
 Runner.instance_.tRex.config.GRAVITY = 0.1;
 ```
 
+### No Obstacle Game (Static)
+
+Stop Character But The Games Its Works Normally
+
+> Enable
+
+```js
+Runner.instance_.playingIntro = true;
+```
+
+> Disable
+
+```js
+Runner.instance_.playingIntro = false;
+```
+
 ### Obstacle Remover
 
 Remove Dino Obstacle
@@ -94,6 +110,7 @@ function drawline() {
       Runner.instance_.horizon.obstacles[0].xPos + 10,
       Runner.instance_.horizon.obstacles[0].yPos + 10
     );
+    Runner.instance_.canvasCtx.strokeStyle = "Red";
     Runner.instance_.canvasCtx.stroke();
     setTimeout(function () {
       Runner.instance_.clearCanvas = b;
@@ -124,6 +141,7 @@ setInterval(function () {
       Runner.instance_.horizon.obstacles[0].xPos + 10,
       Runner.instance_.horizon.obstacles[0].yPos + 10
     );
+    Runner.instance_.canvasCtx.strokeStyle = "Red";
     Runner.instance_.canvasCtx.stroke();
     setTimeout(function () {
       Runner.instance_.clearCanvas = b;
@@ -131,22 +149,6 @@ setInterval(function () {
     Runner.instance_.horizon.removeFirstObstacle(); // remove obstacle
   }
 }, 0.5 * 1000); // Repeater Seconds * Miliseconds (Only Change Seconds Do Not Edit Miliseconds Interval & Timeout CalCultes In MiliSeconds)
-```
-
-### No Obstacle Game (Static)
-
-Stop Character But The Games Its Works Normally
-
-> Enable
-
-```js
-Runner.instance_.playingIntro = true;
-```
-
-> Disable
-
-```js
-Runner.instance_.playingIntro = false;
 ```
 
 ### Auto Dino Bot
